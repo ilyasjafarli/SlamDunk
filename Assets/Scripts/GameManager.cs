@@ -1,16 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject Platform;
+    [SerializeField] private Image[] GorevGorselleri;
+    [SerializeField] private Sprite GorevTamamSprite;
+    [SerializeField] private int AtilmasiGerekenTop;
+    int BasketCount;
+
     void Start()
     {
-        
+        for (int i= 0; i< AtilmasiGerekenTop; i++)
+        {
+            if(i < AtilmasiGerekenTop)
+            {
+                GorevGorselleri[i].gameObject.SetActive(true);
+            }
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetKey(KeyCode.LeftArrow))
@@ -24,5 +36,20 @@ public class GameManager : MonoBehaviour
             Platform.transform.position = Vector3.Lerp(Platform.transform.position, new Vector3(Platform.transform.position.x +0.05f,
              Platform.transform.position.y, Platform.transform.position.z), 0.50f);
         }
+    }
+    public void Basket()
+    {
+        BasketCount++;
+        GorevGorselleri[BasketCount - 1].sprite = GorevTamamSprite;
+
+        if(BasketCount == AtilmasiGerekenTop)
+        {
+            Debug.Log("Görev Tamamlandi");
+        }
+    }
+
+    public void Kaybettin()
+    {
+        Debug.Log("Kaybettin");
     }
 }
