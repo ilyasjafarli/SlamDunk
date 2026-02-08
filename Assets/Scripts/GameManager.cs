@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +6,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject Platform;
+    [Header("---LEVEL OBJELERI---")]
+    [SerializeField] private GameObject Platform;
+    [SerializeField] private GameObject Pota;
+    [SerializeField] private GameObject PotaBuyume;
+    [SerializeField] private GameObject[] OzellikOlusmaNoktalari;
+
+    [Header("---UI OBJELERI---")]
     [SerializeField] private Image[] GorevGorselleri;
     [SerializeField] private Sprite GorevTamamSprite;
     [SerializeField] private int AtilmasiGerekenTop;
@@ -21,8 +27,15 @@ public class GameManager : MonoBehaviour
                 GorevGorselleri[i].gameObject.SetActive(true);
             }
         }
+        //Invoke("Ozellikolussun", 3f);
     }
 
+void Ozellikolussun()
+    {
+        int RandomSayi = Random.Range (0, OzellikOlusmaNoktalari.Length-1);
+        PotaBuyume.transform.position = OzellikOlusmaNoktalari[RandomSayi].transform.position;
+        PotaBuyume.SetActive(true);
+    }
     void Update()
     {
         if(Input.GetKey(KeyCode.LeftArrow))
@@ -46,10 +59,19 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Görev Tamamlandi");
         }
+        if (BasketCount ==1)
+        {
+            Ozellikolussun();
+        }
     }
 
     public void Kaybettin()
     {
         Debug.Log("Kaybettin");
+    }
+
+    public void PotaBuyut()
+    {
+        
     }
 }

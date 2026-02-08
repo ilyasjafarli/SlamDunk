@@ -12,7 +12,9 @@ public class Ball : MonoBehaviour
         if (other.CompareTag("Basket"))
         {
             _GameManager.Basket();
-        } else if (other.CompareTag("GameEnd"))
+
+        }
+        else if (other.CompareTag("GameEnd"))
         {
             _GameManager.Kaybettin();
         }
