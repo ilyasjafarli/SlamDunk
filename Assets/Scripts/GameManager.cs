@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] Panels;
     [SerializeField] private TextMeshProUGUI LevelText;
     int BasketCount;
+    float ParmakPozX;
 
     void Start()
     {
@@ -46,16 +47,27 @@ void Ozellikolussun()
     }
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftArrow))
+        if(Time.timeScale!=0)
         {
-            if(Platform.transform.position.x > -1.1)
-            Platform.transform.position = Vector3.Lerp(Platform.transform.position, new Vector3(Platform.transform.position.x -0.05f,
-             Platform.transform.position.y, Platform.transform.position.z), 0.50f);
-        } else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            if(Platform.transform.position.x < 1.1)
-            Platform.transform.position = Vector3.Lerp(Platform.transform.position, new Vector3(Platform.transform.position.x +0.05f,
-             Platform.transform.position.y, Platform.transform.position.z), 0.50f);
+            if(Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+                Vector3 TouchPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10)); 
+                switch (touch.phase)
+                {
+                    case TouchPhase.Began:
+                    ParmakPozX = TouchPosition.x - Platform.transform.position.x;
+                    break;
+                    case TouchPhase.Moved:
+                    if (TouchPosition.x - ParmakPozX > -1.1 && TouchPosition.x - ParmakPozX < 1.1)
+                        {
+                            Platform.transform.position = Vector3.Lerp(Platform.transform.position, new Vector3
+                            (TouchPosition.x - ParmakPozX,
+                            Platform.transform.position.y, Platform.transform.position.z), 5f);
+                        }
+                    break;
+                }
+            }
         }
     }
     public void Basket(Vector3 Poz)
