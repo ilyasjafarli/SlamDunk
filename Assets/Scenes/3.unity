@@ -609,7 +609,7 @@ Transform:
   m_GameObject: {fileID: 147343130}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.63089, y: -0.74597996, z: -3.1525197}
+  m_LocalPosition: {x: -0.63089, y: -0.74597996, z: -4.034}
   m_LocalScale: {x: 1.023364, y: 0.699863, z: 1.221}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3878,8 +3878,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.42503116, y: 24.06042, z: 0.2}
-  m_Center: {x: 0.62748414, y: 0, z: 0}
+  m_Size: {x: 0.42503116, y: 24.06042, z: 0.37874296}
+  m_Center: {x: 0.62748414, y: 0, z: 0.0037238353}
 --- !u!212 &1054435079
 SpriteRenderer:
   serializedVersion: 2
@@ -3990,8 +3990,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.42503116, y: 16.787018, z: 0.2}
-  m_Center: {x: 0.6274861, y: -0.0324519, z: 0}
+  m_Size: {x: 0.42503116, y: 16.787018, z: 0.34719402}
+  m_Center: {x: 0.6274861, y: -0.032451905, z: -0.0016354865}
 --- !u!4 &1064732835
 Transform:
   m_ObjectHideFlags: 0
@@ -4939,8 +4939,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.42503116, y: 16.642181, z: 0.2}
-  m_Center: {x: 0.6274856, y: -0.09513834, z: 0}
+  m_Size: {x: 0.42503116, y: 16.642181, z: 0.35700703}
+  m_Center: {x: 0.6274856, y: -0.09513835, z: -0.013083854}
 --- !u!4 &1431940385
 Transform:
   m_ObjectHideFlags: 0
@@ -6777,8 +6777,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.42503116, y: 24.06042, z: 0.2}
-  m_Center: {x: 0.62748414, y: 0, z: 0}
+  m_Size: {x: 0.42503116, y: 24.06042, z: 0.34287116}
+  m_Center: {x: 0.62748414, y: 0, z: 0.005226994}
 --- !u!212 &2042936508
 SpriteRenderer:
   serializedVersion: 2
@@ -7899,7 +7899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Aspect: -90
-  ForcePower: 0.001
+  ForcePower: 0.0007
 --- !u!1 &7114202671446322450
 GameObject:
   m_ObjectHideFlags: 0
@@ -7988,7 +7988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Aspect: 0
-  ForcePower: 0.0008
+  ForcePower: 0.0005
 --- !u!64 &7797956767885784744
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8126,7 +8126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Aspect: 90
-  ForcePower: 0.001
+  ForcePower: 0.0007
 --- !u!64 &8057373184431854666
 MeshCollider:
   m_ObjectHideFlags: 0
